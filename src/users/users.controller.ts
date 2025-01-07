@@ -160,13 +160,13 @@ export class UsersController {
   }
 
   // Foydalanuvchini aktivatsiya qilish
-  @Post('activate')
+  @Get('activate')
   @ApiOperation({ summary: 'Foydalanuvchi hisobini aktivatsiya qilish' })
   @ApiResponse({
     status: 200,
     description: 'Foydalanuvchi muvaffaqiyatli aktivlashtirildi.',
   })
-  @ApiResponse({ status: 404, description: 'Foydalanuvchi topilmadi.' })
+  @ApiResponse({ status: 404, description: 'Foydalanuvchi topilmadi.' })    
   async activateUser(@Query('token') token: string) {
     // Aktivatsiya tokenini tekshirish
     if (!token) {

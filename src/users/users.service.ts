@@ -93,7 +93,7 @@ export class UsersService {
 
     // Send activation email
     const token = this.jwtService.generateActivationToken(newUser);
-    const activationLink = `http://localhost:4000/${token}`;
+    const activationLink = `http://13.234.186.162:4001/api/activate?token=${token}`;
 
     await this.emailService.sendMail(
       newUser.email,
